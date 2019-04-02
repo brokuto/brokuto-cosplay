@@ -1,0 +1,20 @@
+<div>
+  <form>
+    <fieldset class="uk-fieldset">
+
+      <legend class="uk-legend">Legend</legend>
+
+      <div class="uk-margin">
+        <input [(ngModel)]="name" name="name" id="name" class="uk-input" type="text" placeholder="Name">
+      </div>
+
+      <div class="uk-margin">
+        <input [(ngModel)]="email" name="email" id="email" class="uk-input" type="email" placeholder="Email">
+      </div>
+
+
+      <button (click)="onSubmit()" class="uk-button uk-button-default">Submit</button>
+
+    </fieldset>
+  </form>
+</div>
