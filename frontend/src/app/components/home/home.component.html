@@ -1,20 +1,23 @@
 <div>
-  <form>
-    <fieldset class="uk-fieldset">
+  <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
+    uk-slideshow="animation: push; autoplay: true; autoplay-interval: 6000; ratio: false">
 
-      <legend class="uk-legend">Legend</legend>
+    <ul class="uk-slideshow-items" uk-height-viewport="offset-top: true; offset-bottom: 0">
+      <li>
+        <img src="../assets/pictures/sample_pic.jpg" alt="" uk-cover>
+      </li>
+      <li>
+        <img src="../assets/pictures/bird.jpg" alt="" uk-cover>
+      </li>
+      <li>
+        <img src="../assets/pictures/doggo.jpg" alt="" uk-cover>
+      </li>
+    </ul>
 
-      <div class="uk-margin">
-        <input [(ngModel)]="name" name="name" id="name" class="uk-input" type="text" placeholder="Name">
-      </div>
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+      uk-slideshow-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+      uk-slideshow-item="next"></a>
+  </div>
 
-      <div class="uk-margin">
-        <input [(ngModel)]="email" name="email" id="email" class="uk-input" type="email" placeholder="Email">
-      </div>
-
-
-      <button (click)="onSubmit()" class="uk-button uk-button-default">Submit</button>
-
-    </fieldset>
-  </form>
 </div>
