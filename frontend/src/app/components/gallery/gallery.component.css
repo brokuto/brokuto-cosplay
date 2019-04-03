@@ -1,3 +1,7 @@
 .flexBox {
     flex-wrap: wrap;
 }
+
+.marginTop {
+    margin-top: -40px;
+}
