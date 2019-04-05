@@ -1,17 +1,62 @@
 .flexBox {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .marginTop {
-    margin-top: -40px;
+  margin-top: -40px;
 }
 
 .toTop {
-    float: right;
-    margin-top: -40px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 30px;
-    font-size: 150%;
+  float: right;
+  margin-top: -40px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  font-size: 150%;
 }
 
+
+/* modal styles */
+modal {
+  /* modals are hidden by default */
+  display: none;
+}
+
+modal .modal {
+  /* modal container fixed across whole screen */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* z-index must be higher than .modal-background */
+  z-index: 1000;
+
+  /* enables scrolling for tall modals */
+  overflow: auto;
+}
+
+.modal-background {
+  /* modal background fixed across whole screen */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* semi-transparent black  */
+  background-color: #000;
+  opacity: 0.75;
+
+  /* z-index must be below .modal and above everything else  */
+  z-index: 900;
+}
+
+modal .modal .modal-body {
+  padding: 20px;
+  background: #fff;
+
+  /* margin exposes part of the modal background */
+  margin: 40px;
+}

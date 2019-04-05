@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/core/modal.service';
+
 
 @Component({
   selector: 'app-gallery',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private modalService: ModalService
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  openModal(id: string) {
+    this.modalService.open(id);
   }
 
+  closeModal(id: string) {
+    this.modalService.close(id);
+  }
 }
+

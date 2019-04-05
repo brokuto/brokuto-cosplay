@@ -3,7 +3,7 @@
 
     <ul class="uk-iconnav">
       <div uk-tooltip="title: Add a new Picture; pos: right">
-        <li><a href="#" uk-icon="icon: plus"></a></li>
+        <li><a (click)="openModal('custom-modal-1')" uk-icon="icon: plus"></a></li>
       </div>
     </ul>
 
@@ -74,3 +74,23 @@
 
 <a class="toTop" href="#" uk-totop uk-scroll></a>
 
+
+
+<!-- dialog for upload -->
+<modal id="custom-modal-1">
+  <div class="modal">
+    <div class="modal-body">
+
+      <h1>Upload a new Picture</h1>
+      <p>
+        upload here
+      </p>
+
+      <p uk-margin>
+        <button class="uk-button uk-button-default" (click)="closeModal('custom-modal-1');">Close</button>
+      </p>
+
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>
