@@ -1,3 +1,120 @@
-<p>
-  gallery works!
-</p>
+<div class="uk-section marginTop">
+  <div class="uk-container uk-container-expand">
+
+    <ul class="uk-iconnav">
+      <div uk-tooltip="title: Add a new Picture; pos: right">
+        <li><a (click)="openModal('custom-modal-1')" uk-icon="icon: plus"></a></li>
+      </div>
+    </ul>
+
+    <div class="uk-flex uk-flex-center@m uk-flex-center@l flexBox">
+      <div>
+        <div class="uk-card uk-card-body">
+          <img data-src="../assets/pictures/doggo.jpg" width="500" height="1200" alt="" uk-img>
+        </div>
+      </div>
+
+      <div>
+        <div class="uk-card uk-card-body">
+          <img data-src="../assets/pictures/doggo.jpg" width="500" height="1200" alt="" uk-img>
+        </div>
+      </div>
+
+      <div>
+        <div class="uk-card uk-card-body">
+          <img data-src="../assets/pictures/doggo.jpg" width="500" height="1200" alt="" uk-img>
+        </div>
+      </div>
+
+      <div>
+        <div class="uk-card uk-card-body">
+          <img data-src="../assets/pictures/doggo.jpg" width="500" height="1200" alt="" uk-img>
+        </div>
+      </div>
+
+      <div>
+        <div class="uk-card uk-card-body">
+          <img data-src="../assets/pictures/doggo.jpg" width="500" height="1200" alt="" uk-img>
+        </div>
+      </div>
+
+      <div>
+        <div class="uk-card uk-card-body">
+          <img data-src="../assets/pictures/doggo.jpg" width="500" height="1200" alt="" uk-img>
+        </div>
+      </div>
+
+      <div>
+        <div class="uk-card uk-card-body">
+          <img data-src="../assets/pictures/doggo.jpg" width="500" height="1200" alt="" uk-img>
+        </div>
+      </div>
+
+      <div>
+        <div class="uk-card uk-card-body">
+          <img data-src="../assets/pictures/doggo.jpg" width="500" height="1200" alt="" uk-img>
+        </div>
+      </div>
+
+      <div>
+        <div class="uk-card uk-card-body">
+          <img data-src="../assets/pictures/doggo.jpg" width="500" height="1200" alt="" uk-img>
+        </div>
+      </div>
+
+      <div>
+        <div class="uk-card uk-card-body">
+          <img data-src="../assets/pictures/doggo.jpg" width="500" height="1200" alt="" uk-img>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<a class="toTop" href="#" uk-totop uk-scroll></a>
+
+
+
+<!-- dialog for upload -->
+<modal id="custom-modal-1">
+  <div class="modal">
+    <div class="modal-body">
+
+      <h1>Upload a new Picture</h1>
+      <hr>
+
+      <h3>Drag and Drop one or more Files</h3>
+
+
+
+      <div class="dropzone" dropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)"
+        [class.hovering]="isHovering">
+
+
+        <h3>AngularFire Drop Zone</h3>
+        <p>Drag and Drop a File</p>
+      </div>
+
+      <h3>Uploads</h3>
+
+      <div *ngFor="let file of files">
+        <upload-task [file]="file"></upload-task>
+      </div>
+
+
+
+
+
+
+
+
+
+      <p uk-margin>
+        <button class="uk-button uk-button-default" (click)="closeModal('custom-modal-1');">Close</button>
+      </p>
+
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>
