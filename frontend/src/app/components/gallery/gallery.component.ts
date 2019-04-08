@@ -38,6 +38,5 @@ export class GalleryComponent implements OnInit {
       this.files.push(files.item(i));
     }
   }
-
 }
 
