@@ -12,11 +12,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { UploadDialogComponent } from './components/gallery/upload-dialog/upload-dialog.component';
+import { ModalService } from './core/modal.service';
+import { DropzoneDirective } from './directives/dropzone.directive';
+import { UploadTaskComponent } from './components/gallery/upload-task/upload-task.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'gallery', component: GalleryComponent },
+  { path: 'upload', component: UploadDialogComponent },
   { path: 'contact', component: ContactComponent },
   { path: '**', pathMatch: 'full', redirectTo: '/home' },
 ];
@@ -26,7 +31,10 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     GalleryComponent,
-    ContactComponent
+    ContactComponent,
+    UploadDialogComponent,
+    DropzoneDirective,
+    UploadTaskComponent,
   ],
   imports: [
     HttpClientModule,
@@ -38,7 +46,9 @@ const routes: Routes = [
     AngularFirestoreModule,
     AngularFireStorageModule,
   ],
-  providers: [],
+  providers: [
+    ModalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

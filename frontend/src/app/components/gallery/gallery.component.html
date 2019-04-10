@@ -3,7 +3,7 @@
 
     <ul class="uk-iconnav">
       <div uk-tooltip="title: Add a new Picture; pos: right">
-        <li><a href="#" uk-icon="icon: plus"></a></li>
+        <li><a (click)="openModal('custom-modal-1')" uk-icon="icon: plus"></a></li>
       </div>
     </ul>
 
@@ -74,3 +74,54 @@
 
 <a class="toTop" href="#" uk-totop uk-scroll></a>
 
+
+
+<!-- dialog for upload -->
+<modal id="custom-modal-1">
+  <div class="modal">
+    <div class="modal-body">
+
+      <h1>Upload a new Picture</h1>
+      <hr>
+
+      <h3>Drag and Drop one or more Files</h3>
+      <div class="dropzone" dropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)"
+        [class.hovering]="isHovering">
+
+        <span class="uk-text-middle"><span uk-icon="icon: cloud-upload"></span> Drag & Drop your File here ...</span>
+
+      </div>
+
+      <h3>Or choose Files</h3>
+      <div class="file">
+        <label class="file-label">
+
+          <input class="file-input inputBtn" type="file" multiple (change)="onDrop($event.target.files)">
+
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fa fa-upload"></i>
+            </span>
+          </span>
+        </label>
+      </div>
+
+      <br />
+      <h3>Uploads</h3>
+      <div class="container">
+        <div *ngFor="let file of files">
+          <upload-task [file]="file"></upload-task>
+          <br />
+          <br />
+        </div>
+      </div>
+
+      <p uk-margin>
+        <br />
+        <button class="uk-button uk-button-default" (click)="closeModal('custom-modal-1');">Close</button>
+      </p>
+
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>
