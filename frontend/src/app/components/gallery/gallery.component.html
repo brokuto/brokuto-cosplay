@@ -8,10 +8,14 @@
     </ul>
 
     <div class="uk-flex uk-flex-center@m uk-flex-center@l flexBox">
-      
-      <div *ngFor="let picture of (pictures | async)" class="itemPicture">
-        <div class="uk-card uk-card-body">
-          <img [src]="picture.downloadURL" width="500" height="1000" alt="" class="imageBorder">
+
+      <div class="masonry">
+        <div class="item">
+          <div *ngFor="let picture of (pictures | async)" class="itemPicture">
+            <div class="uk-card uk-card-body">
+              <img [src]="picture.downloadURL" width="500" height="1000" alt="">
+            </div>
+          </div>
         </div>
       </div>
 

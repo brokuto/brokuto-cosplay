@@ -16,7 +16,7 @@
 }
 
 
-/* modal styles */
+/* dialog styling */
 modal {
   /* modals are hidden by default */
   display: none;
@@ -62,6 +62,7 @@ modal .modal .modal-body {
 }
 
 
+/* drag and drop styling*/
 .dropzone {
   display: flex;
   align-items: center;
@@ -100,6 +101,57 @@ progress::-webkit-progress-value {
   height: 100%;
 }
 
-/* .imageBorder {
-  border: 2px solid black;
-} */
+.itemPicture {
+  margin: -40px;
+}
+
+
+/* masonary styling */
+.masonry {
+  column-count: 3;
+  column-gap: 1em;
+
+  margin: 1.5em auto;
+  column-gap: 1.5em;
+}
+
+.item {
+  background-color: #eee;
+  margin: 0 0 1em;
+  width: 100%;
+
+  background: #fff;
+  margin: 0 0 1.5em;
+}
+
+
+@media all and (max-width: 520px) {
+  .masonry {
+    column-count: 1 !important;
+  }
+
+  .item {
+    margin-top: 30px;
+  }
+}
+
+@media all and (max-width: 1140px) {
+  .masonry {
+    column-count: 2;
+  }
+
+  .item {
+    margin-top: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
