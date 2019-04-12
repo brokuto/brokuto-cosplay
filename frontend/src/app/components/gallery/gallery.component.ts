@@ -14,20 +14,14 @@ import { DataService } from 'src/app/core/data.service';
 })
 export class GalleryComponent implements OnInit {
 
-
-
   private pictureCollection: AngularFirestoreCollection<any>;
   pictures: Observable<any>;
-
-
-
 
   constructor(
     private modalService: ModalService,
     private storage: AngularFireStorage,
     private db: AngularFirestore,
     private dataService: DataService,
-
   ) { }
 
   ngOnInit() {
@@ -58,21 +52,6 @@ export class GalleryComponent implements OnInit {
       this.files.push(files.item(i));
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 

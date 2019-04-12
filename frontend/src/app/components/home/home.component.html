@@ -1,16 +1,19 @@
-<div>
+<div *ngFor="let picture of (pictures | async)">
   <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
     uk-slideshow="animation: push; autoplay: true; autoplay-interval: 6000; ratio: false">
 
     <ul class="uk-slideshow-items" uk-height-viewport="offset-top: true; offset-bottom: 0">
       <li>
-        <img src="../assets/pictures/sample_pic.jpg" alt="" uk-cover>
+        <img src="../../../assets/pictures/placeholder1.jpeg" alt="" uk-cover>
       </li>
       <li>
-        <img src="../assets/pictures/bird.jpg" alt="" uk-cover>
+        <img src="../../../assets/pictures/placeholder2.jpeg" alt="" uk-cover>
       </li>
       <li>
-        <img src="../assets/pictures/doggo.jpg" alt="" uk-cover>
+        <img src="../../../assets/pictures/placeholder3.jpeg" alt="" uk-cover>
+      </li>
+      <li>
+        <img src="../../../assets/pictures/placeholder4.jpeg" alt="" uk-cover>
       </li>
     </ul>
 
