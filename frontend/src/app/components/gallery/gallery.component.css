@@ -99,3 +99,7 @@ progress::-webkit-progress-value {
   flex-wrap: wrap;
   height: 100%;
 }
+
+/* .imageBorder {
+  border: 2px solid black;
+} */
