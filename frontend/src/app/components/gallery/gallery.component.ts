@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { ModalService } from 'src/app/core/modal.service';
+import { AngularFireUploadTask, AngularFireStorage } from '@angular/fire/storage';
+import { Observable } from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { tap, finalize } from 'rxjs/operators';
+import { DataService } from 'src/app/core/data.service';
 
 
 @Component({
@@ -9,11 +14,26 @@ import { ModalService } from 'src/app/core/modal.service';
 })
 export class GalleryComponent implements OnInit {
 
+
+
+  private pictureCollection: AngularFirestoreCollection<any>;
+  pictures: Observable<any>;
+
+
+
+
   constructor(
-    private modalService: ModalService
+    private modalService: ModalService,
+    private storage: AngularFireStorage,
+    private db: AngularFirestore,
+    private dataService: DataService,
+
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.pictureCollection = this.db.collection<any>("files");
+    this.pictures = this.pictureCollection.valueChanges();
+  }
 
   openModal(id: string) {
     this.modalService.open(id);
@@ -38,5 +58,21 @@ export class GalleryComponent implements OnInit {
       this.files.push(files.item(i));
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
