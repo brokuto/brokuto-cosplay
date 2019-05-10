@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { tap, finalize } from 'rxjs/operators';
 import { DataService } from 'src/app/core/data.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -17,11 +18,14 @@ export class GalleryComponent implements OnInit {
   private pictureCollection: AngularFirestoreCollection<any>;
   pictures: Observable<any>;
 
+  imgUrl: string = "";
+
   constructor(
     private modalService: ModalService,
     private storage: AngularFireStorage,
     private db: AngularFirestore,
     private dataService: DataService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -29,14 +33,14 @@ export class GalleryComponent implements OnInit {
     this.pictures = this.pictureCollection.valueChanges();
   }
 
-  openModal(id: string) {
+  openModal(id: string, imgUrl: string) {
     this.modalService.open(id);
+    this.imgUrl = imgUrl;
   }
 
   closeModal(id: string) {
     this.modalService.close(id);
   }
-
 
   // uploader
   isHovering: boolean;

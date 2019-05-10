@@ -7,13 +7,16 @@
       </div>
     </ul>
 
+
+
     <div class="uk-flex uk-flex-center@m uk-flex-center@l flexBox">
 
       <div class="masonry">
         <div class="item">
           <div *ngFor="let picture of (pictures | async)" class="itemPicture">
             <div class="uk-card uk-card-body">
-              <img [src]="picture.downloadURL" width="500" height="1000" alt="">
+              <img (click)="openModal('custom-modal-2', picture.downloadURL)" [src]="picture.downloadURL" width="500"
+                height="1000" alt="">
             </div>
           </div>
         </div>
@@ -72,6 +75,25 @@
         <br />
         <button class="uk-button uk-button-default" (click)="closeModal('custom-modal-1');">Close</button>
       </p>
+
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>
+
+
+<!-- dialog for image view -->
+<modal id="custom-modal-2">
+  <div class="modal">
+    <div class="modal-body">
+
+      <a (click)="closeModal('custom-modal-2');" uk-icon="icon: close; ratio: 1.5"></a>
+
+      <div>
+        <div>
+          <img [src]="imgUrl" class="image" />
+        </div>
+      </div>
 
     </div>
   </div>
