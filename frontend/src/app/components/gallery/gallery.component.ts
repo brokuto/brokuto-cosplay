@@ -20,6 +20,8 @@ export class GalleryComponent implements OnInit {
 
   imgUrl: string = "";
 
+  imageHard: number = 0;
+
   constructor(
     private modalService: ModalService,
     private storage: AngularFireStorage,
@@ -33,9 +35,10 @@ export class GalleryComponent implements OnInit {
     this.pictures = this.pictureCollection.valueChanges();
   }
 
-  openModal(id: string, imgUrl: string) {
+  openModal(id: string, imgUrl: string, imageHard: number) {
     this.modalService.open(id);
     this.imgUrl = imgUrl;
+    this.imageHard = imageHard;
   }
 
   closeModal(id: string) {

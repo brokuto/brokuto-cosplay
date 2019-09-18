@@ -1,0 +1,17 @@
+.hoverImg {
+  z-index: 1;
+  margin-right: -150px;
+  background: #f8f8f8;
+}
+
+.hoverImg:hover {
+  display: none;
+}
+
+.gifImg {
+  z-index: -1;
+}
+
+.gifImg:hover {
+  display: inline-block;
+}
