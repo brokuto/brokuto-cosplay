@@ -1,3 +1,17 @@
+ul li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.uk-subnav-pill > .uk-active > a {
+  background-color: #a1b1bf;
+  color: #fff;
+}
+
+.marginFilter {
+  margin-left: 60px;
+}
+
 .flexBox {
   flex-wrap: wrap;
 }
@@ -173,3 +187,13 @@ progress::-webkit-progress-value {
 #custom-modal-2 a:hover {
   color: #6700b0 !important;
 }
+
+/* watermark */
+.watermark {
+  position: absolute;
+  left: 30px;
+  opacity: 0.5;
+  width: 35em;
+  top: 95px;
+}
+
