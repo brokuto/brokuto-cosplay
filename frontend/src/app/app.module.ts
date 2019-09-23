@@ -17,14 +17,12 @@ import { ModalService } from './core/modal.service';
 import { DropzoneDirective } from './directives/dropzone.directive';
 import { UploadTaskComponent } from './components/gallery/upload-task/upload-task.component';
 import { ImageViewDialogComponent } from './components/gallery/image-view-dialog/image-view-dialog.component';
-import { InfoComponent } from './components/info/info.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'gallery/:id', component: ImageViewDialogComponent },
-  { path: 'info', component: InfoComponent },
   { path: 'upload', component: UploadDialogComponent },
   { path: 'contact', component: ContactComponent },
   { path: '**', pathMatch: 'full', redirectTo: '/home' },
@@ -40,7 +38,6 @@ const routes: Routes = [
     DropzoneDirective,
     UploadTaskComponent,
     ImageViewDialogComponent,
-    InfoComponent
   ],
   imports: [
     HttpClientModule,

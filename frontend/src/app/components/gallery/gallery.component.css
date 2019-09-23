@@ -3,7 +3,7 @@ ul li {
   list-style: none;
 }
 
-.uk-subnav-pill > .uk-active > a {
+.uk-subnav-pill>.uk-active>a {
   background-color: #a1b1bf;
   color: #fff;
 }
@@ -73,7 +73,7 @@ modal .modal {
 
 modal .modal .modal-body {
   padding: 20px;
-  background: #fff;
+  background: rgba(49, 49, 49, 0);
 
   /* margin exposes part of the modal background */
   margin: 40px;
@@ -140,11 +140,9 @@ progress::-webkit-progress-value {
 }
 
 .item {
-  background-color: #eee;
   margin: 0 0 1em;
   width: 100%;
-
-  background: #fff;
+  background: #121212;
   margin: 0 0 1.5em;
 }
 
@@ -196,4 +194,3 @@ progress::-webkit-progress-value {
   width: 35em;
   top: 95px;
 }
-

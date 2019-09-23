@@ -1,0 +1,50 @@
+.btnContact {
+  float: right;
+}
+
+h3 {
+  color: #d5d5d5;
+  text-align: center;
+}
+
+legend {
+  color: #d5d5d5;
+}
+
+
+input {
+  background: #121212;
+  color: honeydew;
+}
+
+input:active {
+  background: #121212;
+}
+
+input:focus {
+  background: #121212;
+  border-color: lightcoral;
+}
+
+textarea {
+  background: #121212;
+  color: #d5d5d5;
+}
+
+textarea:active {
+  background: #121212;
+}
+
+textarea:focus {
+  background: #121212;
+  border-color: lightcoral;
+}
+
+button {
+  color: #d5d5d5;
+}
+
+button:hover {
+  border-color: lightcoral;
+  color: #d5d5d5;
+}
