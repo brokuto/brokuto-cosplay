@@ -9,7 +9,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { UploadDialogComponent } from './components/gallery/upload-dialog/upload-dialog.component';
@@ -17,6 +16,9 @@ import { ModalService } from './core/modal.service';
 import { DropzoneDirective } from './directives/dropzone.directive';
 import { UploadTaskComponent } from './components/gallery/upload-task/upload-task.component';
 import { ImageViewDialogComponent } from './components/gallery/image-view-dialog/image-view-dialog.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -38,6 +40,7 @@ const routes: Routes = [
     DropzoneDirective,
     UploadTaskComponent,
     ImageViewDialogComponent,
+    LoaderComponent,
   ],
   imports: [
     HttpClientModule,
@@ -48,6 +51,8 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
+    HttpClientModule,
+    NgHttpLoaderModule.forRoot()
   ],
   providers: [
     ModalService

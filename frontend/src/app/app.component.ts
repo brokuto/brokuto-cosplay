@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LoaderComponent } from './components/loader/loader.component';
+import { SpinnerVisibilityService } from 'ng-http-loader';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() { }
+  public loaderComponent = LoaderComponent;
+
+  constructor(private spinner: SpinnerVisibilityService) { 
+    spinner.show();
+  }
 
   ngOnInit() { }
 
